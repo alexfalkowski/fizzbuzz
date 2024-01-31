@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+## [v1.0.0](https://github.com/alexfalkowski/fizzbuzz/releases/tag/v1.0.0) - 2024-01-31
+
+- [`cb93df2`](https://github.com/alexfalkowski/fizzbuzz/commit/cb93df22b91750798ce6f41db3833d234a4f3e91) feat: add v1 (#2)
+
 ## [v0.1.0](https://github.com/alexfalkowski/fizzbuzz/releases/tag/v0.1.0) - 2024-01-31
 
 - [`10a62b7`](https://github.com/alexfalkowski/fizzbuzz/commit/10a62b721e40f46320e52e12e96b35af48cd64b7) feat: setup project (#1)
