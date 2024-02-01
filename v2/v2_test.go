@@ -1,9 +1,9 @@
-package v1_test
+package v2_test
 
 import (
 	"testing"
 
-	v1 "github.com/alexfalkowski/fizzbuzz/v1"
+	v2 "github.com/alexfalkowski/fizzbuzz/v2"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,7 +21,7 @@ func TestFizzBuzz(t *testing.T) {
 	}
 
 	for _, te := range tests {
-		r := v1.FizzBuzz(te.n)
-		require.Equal(t, te.e, r)
+		g := v2.NewFizzBuzz()
+		require.Equal(t, te.e, g.Play(te.n))
 	}
 }
