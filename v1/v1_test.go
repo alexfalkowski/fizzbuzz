@@ -7,23 +7,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestEmpty(t *testing.T) {
-	r := v1.FizzBuzz(0)
-	require.Empty(t, r)
-}
+func TestV1(t *testing.T) {
+	type test struct {
+		n uint
+		e []string
+	}
 
-func TestFizz(t *testing.T) {
-	r := v1.FizzBuzz(3)
-	require.Equal(t, []string{"1", "2", "Fizz"}, r)
-}
+	tests := []test{
+		{0, []string{}},
+		{3, []string{"1", "2", "Fizz"}},
+		{5, []string{"1", "2", "Fizz", "4", "Buzz"}},
+		{15, []string{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "Fizz Buzz"}},
+	}
 
-func TestBuzz(t *testing.T) {
-	r := v1.FizzBuzz(5)
-	require.Equal(t, []string{"1", "2", "Fizz", "4", "Buzz"}, r)
-}
-
-func TestFizzBuzz(t *testing.T) {
-	e := []string{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "Fizz Buzz"}
-	r := v1.FizzBuzz(15)
-	require.Equal(t, e, r)
+	for _, te := range tests {
+		r := v1.FizzBuzz(te.n)
+		require.Equal(t, te.e, r)
+	}
 }
