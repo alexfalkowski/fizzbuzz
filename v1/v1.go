@@ -5,25 +5,25 @@ import (
 )
 
 // FizzBuzz game.
-func FizzBuzz(n uint) []string {
-	r := make([]string, n)
+func FizzBuzz(total uint) []string {
+	words := make([]string, total)
 
-	for i := 1; i <= int(n); i++ {
-		var s string
+	for number := 1; number <= int(total); number++ {
+		var word string
 
 		switch {
-		case i%15 == 0:
-			s = "Fizz Buzz"
-		case i%3 == 0:
-			s = "Fizz"
-		case i%5 == 0:
-			s = "Buzz"
+		case number%15 == 0:
+			word = "Fizz Buzz"
+		case number%3 == 0:
+			word = "Fizz"
+		case number%5 == 0:
+			word = "Buzz"
 		default:
-			s = strconv.Itoa(i)
+			word = strconv.Itoa(number)
 		}
 
-		r[i-1] = s
+		words[number-1] = word
 	}
 
-	return r
+	return words
 }

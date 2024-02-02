@@ -5,7 +5,7 @@ import (
 )
 
 // Rule of the game.
-type Rule func(n int) (string, bool)
+type Rule func(number int) (string, bool)
 
 // NewGame with rules.
 func NewGame(rules []Rule) *Game {
@@ -18,22 +18,22 @@ type Game struct {
 }
 
 // Play the game.
-func (g *Game) Play(n uint) []string {
-	r := make([]string, n)
+func (g *Game) Play(total uint) []string {
+	words := make([]string, total)
 
-	for i := 1; i <= int(n); i++ {
-		for _, rl := range g.rules {
-			if s, ok := rl(i); ok {
-				r[i-1] = s
+	for number := 1; number <= int(total); number++ {
+		for _, rule := range g.rules {
+			if word, ok := rule(number); ok {
+				words[number-1] = word
 
 				break
 			}
 		}
 	}
 
-	return r
+	return words
 }
 
-func none(n int) (string, bool) {
-	return strconv.Itoa(n), true
+func number(number int) (string, bool) {
+	return strconv.Itoa(number), true
 }
